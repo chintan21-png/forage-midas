@@ -2,6 +2,7 @@ package com.jpmc.midascore;
 
 import com.jpmc.midascore.component.DatabaseConduit;
 import com.jpmc.midascore.entity.UserRecord;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +14,7 @@ public class UserPopulator {
     @Autowired
     private DatabaseConduit databaseConduit;
 
+    @Transactional
     public void populate() {
         String[] userLines = fileLoader.loadStrings("/test_data/lkjhgfdsa.hjkl");
         for (String userLine : userLines) {
