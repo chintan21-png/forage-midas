@@ -10,7 +10,7 @@ public class UserRecord {
     private long id;
 
     @Column(nullable = false)
-    private String name;
+    private String username;
 
     @Column(nullable = false)
     private float balance;
@@ -18,14 +18,14 @@ public class UserRecord {
     protected UserRecord() {
     }
 
-    public UserRecord(String name, float balance) {
-        this.name = name;
+    public UserRecord(String username, float balance) {
+        this.username = username;
         this.balance = balance;
     }
 
     @Override
     public String toString() {
-        return String.format("User[id=%d, name='%s', balance='%f'", id, name, balance);
+        return String.format("User[id=%d, name='%s', balance='%f'", id, username, balance);
     }
 
     public Long getId() {
@@ -33,7 +33,7 @@ public class UserRecord {
     }
 
     public String getName() {
-        return name;
+        return username;
     }
 
     public float getBalance() {
